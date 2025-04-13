@@ -15,32 +15,37 @@ class AIAnalyzerController extends Controller
     public function analyze(Request $request)
     {
         $request->validate([
-            'images.*' => 'required|image|mimes:jpeg,png,jpg|max:5120'
+            'images.*' => 'required|image|mimes:jpeg,png,jpg,gif,webp|max:10240'
         ]);
-
+    
         $results = [];
-
+    
         foreach ($request->file('images') as $image) {
+            // 1. خزّن الصورة
             $path = $image->store('uploads', 'public');
-
-            // 👇 Run the image through the AI model (this is just a placeholder)
-            $output = $this->runModel(public_path("storage/" . $path));
-
+    
+            // 2. شغّل الذكاء الاصطناعي (بشكل مبسط مثال)
+            // استبدل السطر الجاي بمناداة نموذجك الحقيقي
+            $aiResult = $this->mockAIResult($path); 
+    
+            // 3. خزّن النتيجة لكل صورة
             $results[] = [
-                'filename' => $image->getClientOriginalName(),
-                'result' => $output,
-                'path' => "storage/" . $path,
+                'image' => $path,
+                'result' => $aiResult
             ];
         }
-
-        return view('ai.result', compact('results'));
+    
+        // 4. رجعهم لصفحة التقرير
+        return view('ai-report', compact('results'));
     }
-
-    // 👇 Dummy function (replace this with real model code later)
-    private function runModel($imagePath)
+    
+    // نموذج وهمي (تستبدله بـ AI حقيقي لاحقًا)
+    private function mockAIResult($path)
     {
-        // Call Python script or use PHP-Python bridge
-        return "Garbage detected in the area"; // Replace with real result
+        $classes = ['Garbage', 'Tree', 'People', 'Street Light', 'Car'];
+        $random = collect($classes)->random(rand(1, 3));
+        return 'Detected: ' . $random->implode(', ');
     }
+    
 }
 
