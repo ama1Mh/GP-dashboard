@@ -102,13 +102,11 @@
     </div>
 
     <div class="row">
-        <!-- Report Statistics -->
-        <!-- Same as your existing code for reports -->
+       
     </div>
 
     <div class="row">
-        <!-- User Statistics -->
-        <!-- Same as your existing code for user stats -->
+      
     </div>
 
     <!-- Row for the charts side by side -->

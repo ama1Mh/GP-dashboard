@@ -63,12 +63,12 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
-    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
-    'logo_img_class' => 'brand-image img-circle elevation-3',
-    'logo_img_xl' => null,
-    'logo_img_xl_class' => 'brand-image-xs',
-    'logo_img_alt' => 'Admin Logo',
+    'logo' => '<b>Admin</b>',
+    // 'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+    // 'logo_img_class' => 'brand-image img-circle elevation-3',
+    // 'logo_img_xl' => null,
+    // 'logo_img_xl_class' => 'brand-image-xs',
+    // 'logo_img_alt' => 'Admin Logo',
 
     /*
     |--------------------------------------------------------------------------
@@ -83,16 +83,16 @@ return [
     |
     */
 
-    'auth_logo' => [
-        'enabled' => false,
-        'img' => [
-            'path' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
-            'alt' => 'Auth Logo',
-            'class' => '',
-            'width' => 50,
-            'height' => 50,
-        ],
-    ],
+    // 'auth_logo' => [
+    //     'enabled' => false,
+    //     'img' => [
+    //         'path' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+    //         'alt' => 'Auth Logo',
+    //         'class' => '',
+    //         'width' => 50,
+    //         'height' => 50,
+    //     ],
+    // ],
 
     /*
     |--------------------------------------------------------------------------
@@ -301,11 +301,7 @@ return [
          //   'type' => 'sidebar-menu-search',
         //    'text' => 'search',
       //  ],
-        [
-            'text' => 'blog',
-            'url' => 'admin/blog',
-            'can' => 'manage-blog',
-        ],
+      
         [
             'text' => 'Dashboard',
             'url' => 'admin/dashboard',
@@ -313,21 +309,21 @@ return [
             'label' => 7,
             'label_color' => 'success',
         ],
-        ['header' => 'account_settings'],
+        ['header' => 'drop-ai report'],
         [
-            'text' => 'change_password',
-            'url' => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
+            'text' => 'AI Analyzer',
+            'url'  => 'ai-analyzer',
+            'icon' => 'fas fa-brain',
         ],
 
 
 
         ['header' => 'tables'],
-        [
-            'text' => 'item',
-            'icon_color' => 'red',
-            'url' => 'admin/Item',
-        ],
+        // [
+        //     'text' => 'item',
+        //     'icon_color' => 'red',
+        //     'url' => 'admin/Item',
+        // ],
         [
             'text' => 'users',
             'icon_color' => 'yellow',
