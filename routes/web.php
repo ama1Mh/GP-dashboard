@@ -7,7 +7,6 @@ use App\Http\Controllers\ServiceProvidersController;
 use App\Http\Controllers\RequestsController;
 use App\Http\Controllers\UserReportsController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\AIAnalyzerController;
 
 Route::get('/admin/dashboard', [DashboardController::class, 'showDashboard'])->name('admin.dashboard');
 
@@ -25,10 +24,6 @@ Route::put('aminuser/update/{userID}', [AminUsersController::class, 'update'])->
 
 Route::get('/admin/Item', [ItemController::class, 'index'])->name('Item.index');
 Route::put('/items/update', [ItemController::class, 'update'])->name('items.update');
-
-Route::get('/ai-analyzer', [AIAnalyzerController::class, 'index'])->name('ai.index');
-Route::post('/ai-analyzer/upload', [AIAnalyzerController::class, 'predict'])->name('ai.analyze');
-Route::get('/ai-analyzer/report', [AIAnalyzerController::class, 'report'])->name('ai.report');
 
 Route::get('/', function () {
     return view('welcome');

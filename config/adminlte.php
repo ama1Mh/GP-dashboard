@@ -311,9 +311,9 @@ return [
         ],
         ['header' => 'drop-ai report'],
         [
-            'text' => 'AI Analyzer',
-            'url'  => 'ai-analyzer',
-            'icon' => 'fas fa-brain',
+            'text' => 'AI Detection',
+            'url'  => 'https://aitest-nbn0.onrender.com/',
+            'icon' => 'fas fa-robot',
         ],
 
 
