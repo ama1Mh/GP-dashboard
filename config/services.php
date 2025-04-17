@@ -37,7 +37,9 @@ return [
 
     'roboflow' => [
     'key' => env('ROBOFLOW_API_KEY'),
-    ],
-
+    'workflow_id' => env('ROBOFLOW_WORKFLOW_ID'),
+    'workspace' => env('ROBOFLOW_WORKSPACE'),
+    'admin_email' => env('ROBOFLOW_ADMIN_EMAIL'),
+],
 
 ];
