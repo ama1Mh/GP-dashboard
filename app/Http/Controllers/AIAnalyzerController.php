@@ -85,17 +85,16 @@ class AIAnalyzerController extends Controller
 
     private function handleAnalysisResults($imageUrl, $analysis)
     {
-        if (empty($analysis['predictions'])) {
-            throw new \Exception("لم يتم اكتشاف أي كائن في الصورة. تأكد من وضوح الصورة وأنها تحتوي على كائنات تعرفها النموذج.");
-        }
-
+        // إذا كان $analysis مصفوفة وفيه عنصر واحد
+        $first = is_array($analysis) && isset($analysis[0]) ? $analysis[0] : [];
+    
         return redirect()->route('ai.report')->with([
             'results' => [
                 'image_url' => $imageUrl,
-                'predictions' => $analysis['predictions'],
-                'top_class' => $analysis['top_class'] ?? 'unknown',
-                'confidence' => $analysis['confidence'] ?? null,
-                'upload_status' => $analysis['roboflow_dataset_upload'] ?? null
+                'predictions' => $first['predictions'] ?? [],  // قد تكون فاضية
+                'top_class' => $first['top_class'] ?? 'unknown',
+                'confidence' => $first['confidence'] ?? null,
+                'upload_status' => $first['roboflow_dataset_upload'] ?? null
             ]
         ]);
     }
