@@ -31,4 +31,13 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'imgbb' => [
+    'key' => env('IMGBB_API_KEY'),
+    ],
+
+    'roboflow' => [
+    'key' => env('ROBOFLOW_API_KEY'),
+    ],
+
+
 ];

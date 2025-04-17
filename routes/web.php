@@ -27,8 +27,8 @@ Route::get('/admin/Item', [ItemController::class, 'index'])->name('Item.index');
 Route::put('/items/update', [ItemController::class, 'update'])->name('items.update');
 
 Route::get('/ai-analyzer', [AIAnalyzerController::class, 'index'])->name('ai.index');
-Route::post('/ai-analyzer/upload', [AIAnalyzerController::class, 'analyze'])->name('ai.analyze');
-
+Route::post('/ai-analyzer/upload', [AIAnalyzerController::class, 'predict'])->name('ai.analyze');
+Route::get('/ai-analyzer/report', [AIAnalyzerController::class, 'report'])->name('ai.report');
 
 Route::get('/', function () {
     return view('welcome');

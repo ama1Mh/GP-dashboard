@@ -3,8 +3,8 @@
 {{-- Extend and customize the browser title --}}
 
 @section('title')
-    {{ config('adminlte.title') }}
-    @hasSection('subtitle') | @yield('subtitle') @endif
+    {{ config('amin.title') }}
+  
 @stop
 
 {{-- Extend and customize the page content header --}}
