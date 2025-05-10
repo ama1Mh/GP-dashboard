@@ -16,4 +16,8 @@ class UserReport extends Model
     protected $fillable = [
         'userID', 'description', 'status',
     ];
+
+       protected $attributes = [
+        'status' => 'pending'
+    ];
 }
